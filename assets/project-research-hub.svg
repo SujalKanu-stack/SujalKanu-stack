@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 220" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="card-bg-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140f20" />
+      <stop offset="100%" stop-color="#090a11" />
+    </linearGradient>
+
+    <linearGradient id="violet-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+
+    <filter id="glow-card-2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-mono {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+    .font-sans {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    @keyframes ai-pulse {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+    .ai-badge-dot {
+      transform-origin: 44px 50px;
+      animation: ai-pulse 2s infinite ease-in-out;
+    }
+  </style>
+
+  <!-- Container Base -->
+  <rect x="1" y="1" width="878" height="218" rx="14" fill="url(#card-bg-2)" stroke="#30363d" stroke-width="1.5" />
+  <rect x="1" y="1" width="878" height="218" rx="14" fill="none" stroke="url(#violet-pink)" stroke-width="1.5" stroke-opacity="0.3" />
+  <path d="M 1 40 L 1 14 Q 1 1 14 1 L 60 1" fill="none" stroke="#8b5cf6" stroke-width="2.5" filter="url(#glow-card-2)" />
+
+  <!-- HEADER ROW -->
+  <g transform="translate(32, 36)">
+    <!-- Category Tag -->
+    <rect x="0" y="0" width="160" height="26" rx="13" fill="#20132e" stroke="#8b5cf6" stroke-opacity="0.8" stroke-width="1" />
+    <circle cx="16" cy="13" r="4" fill="#8b5cf6" class="ai-badge-dot" />
+    <text x="28" y="18" fill="#d8b4fe" font-size="11" class="font-mono" font-weight="700" letter-spacing="0.5">
+      AI &amp; COLLABORATION
+    </text>
+
+    <!-- Repo Badge Tag (Top Right) -->
+    <g transform="translate(635, 2)">
+      <rect x="0" y="0" width="180" height="24" rx="6" fill="#161b22" stroke="#30363d" />
+      <text x="90" y="16" fill="#8b949e" font-size="10.5" class="font-mono" text-anchor="middle">
+        REPO: Research_collab_Hub
+      </text>
+    </g>
+  </g>
+
+  <!-- TITLE & IMPACT -->
+  <g transform="translate(32, 90)">
+    <text x="0" y="0" fill="#ffffff" font-size="24" class="font-sans" font-weight="800" letter-spacing="-0.5">
+      Research Collab Hub <tspan fill="#f43f5e" font-size="18" font-weight="500">— Multi-Researcher Synthesis Platform</tspan>
+    </text>
+    <text x="0" y="28" fill="#94a3b8" font-size="14" class="font-sans" font-weight="400">
+      Academic research workspace integrating FastAPI backends and Claude API to automate document synthesis, semantic literature cross-referencing, and real-time researcher discussion threads.
+    </text>
+  </g>
+
+  <!-- TECH STACK PILLS & ACTIONS (BOTTOM ROW) -->
+  <g transform="translate(32, 160)">
+    <!-- Tech Stack Group -->
+    <g transform="translate(0, 0)">
+      <!-- FastAPI -->
+      <rect x="0" y="0" width="82" height="28" rx="6" fill="#161b22" stroke="#8b5cf6" stroke-opacity="0.4" />
+      <text x="41" y="18" fill="#c084fc" font-size="11.5" class="font-mono" font-weight="600" text-anchor="middle">FastAPI</text>
+
+      <!-- React -->
+      <rect x="90" y="0" width="64" height="28" rx="6" fill="#161b22" stroke="#30363d" />
+      <text x="122" y="18" fill="#e6edf3" font-size="11.5" class="font-mono" font-weight="500" text-anchor="middle">React</text>
+
+      <!-- Claude API -->
+      <rect x="162" y="0" width="102" height="28" rx="6" fill="#20132a" stroke="#f43f5e" stroke-opacity="0.6" />
+      <text x="213" y="18" fill="#fda4af" font-size="11.5" class="font-mono" font-weight="700" text-anchor="middle">Claude API</text>
+
+      <!-- Python -->
+      <rect x="272" y="0" width="72" height="28" rx="6" fill="#161b22" stroke="#30363d" />
+      <text x="308" y="18" fill="#e6edf3" font-size="11.5" class="font-mono" font-weight="500" text-anchor="middle">Python</text>
+
+      <!-- PostgreSQL -->
+      <rect x="352" y="0" width="100" height="28" rx="6" fill="#161b22" stroke="#30363d" />
+      <text x="402" y="18" fill="#e6edf3" font-size="11.5" class="font-mono" font-weight="500" text-anchor="middle">PostgreSQL</text>
+    </g>
+
+    <!-- View Repo Button / Link Visual -->
+    <g transform="translate(635, 0)">
+      <rect x="0" y="0" width="180" height="30" rx="8" fill="#161b22" stroke="#8b5cf6" stroke-width="1.2" />
+      <text x="76" y="20" fill="#c084fc" font-size="12" class="font-mono" font-weight="700">VIEW REPO</text>
+      <text x="155" y="20" fill="#c084fc" font-size="14" class="font-mono" font-weight="700">↗</text>
+    </g>
+  </g>
+</svg>

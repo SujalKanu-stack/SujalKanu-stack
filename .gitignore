@@ -1,0 +1,22 @@
+# Local preview files
+preview*.html
+preview-*.png
+assets/preview-*.png
+
+# Node & Scratch files
+node_modules/
+scratch/
+*.log
+
+# Environment & Secret files
+.env*
+*.key
+*.pem
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
