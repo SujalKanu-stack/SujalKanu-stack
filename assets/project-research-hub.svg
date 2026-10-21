@@ -63,8 +63,9 @@
     <text x="0" y="0" fill="#ffffff" font-size="24" class="font-sans" font-weight="800" letter-spacing="-0.5">
       Research Collab Hub <tspan fill="#f43f5e" font-size="18" font-weight="500">— Multi-Researcher Synthesis Platform</tspan>
     </text>
-    <text x="0" y="28" fill="#94a3b8" font-size="14" class="font-sans" font-weight="400">
-      Academic research workspace integrating FastAPI backends and Claude API to automate document synthesis, semantic literature cross-referencing, and real-time researcher discussion threads.
+    <text x="0" y="26" fill="#94a3b8" font-size="13.5" class="font-sans" font-weight="400">
+      <tspan x="0" dy="0">Academic research workspace integrating FastAPI backends and Claude API to automate document</tspan>
+      <tspan x="0" dy="20">synthesis, semantic literature cross-referencing, and real-time researcher discussion threads.</tspan>
     </text>
   </g>
 

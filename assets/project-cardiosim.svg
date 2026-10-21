@@ -68,8 +68,9 @@
     <text x="0" y="0" fill="#ffffff" font-size="24" class="font-sans" font-weight="800" letter-spacing="-0.5">
       CardioSim 3D <tspan fill="#22d3ee" font-size="18" font-weight="500">— Interactive WebGL Heart Simulation</tspan>
     </text>
-    <text x="0" y="28" fill="#94a3b8" font-size="14" class="font-sans" font-weight="400">
-      Interactive browser-based 3D cardiac anatomical simulation with orbital camera controls, dynamic cross-section inspection, and pedagogical pathology visualization built on Three.js &amp; WebGL shaders.
+    <text x="0" y="26" fill="#94a3b8" font-size="13.5" class="font-sans" font-weight="400">
+      <tspan x="0" dy="0">Interactive browser-based 3D cardiac anatomical simulation with orbital camera controls, dynamic</tspan>
+      <tspan x="0" dy="20">cross-section inspection, and pedagogical pathology visualization built on Three.js &amp; WebGL shaders.</tspan>
     </text>
   </g>
 

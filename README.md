@@ -1,13 +1,16 @@
 <p align="center">
-  <img src="assets/hero.svg" width="900" alt="Sujal Kumar Kanu, ASCII portrait">
+  <img src="assets/hero.svg" width="100%" alt="Sujal Kumar Kanu, ASCII portrait">
 </p>
 
 <p align="center">
   <strong>3rd-year B.E. Computer Science &amp; Engineering &bull; BMSIT&amp;M, Bengaluru</strong><br>
   <a href="https://linkedin.com/in/sujal-kumar-kanu">LinkedIn</a> &bull;
   <a href="https://sujalkanu-stack.github.io/portfolio">Portfolio</a> &bull;
-  <!-- Replace YOUR_EMAIL_HERE with your email address -->
-  <a href="mailto:YOUR_EMAIL_HERE">Email</a>
+  <a href="mailto:sujalguptaa121@gmail.com">Email</a>
+</p>
+
+<p align="center">
+  <img src="assets/divider.svg" width="100%" alt="Divider">
 </p>
 
 ## About Me
@@ -18,98 +21,91 @@ Right now, I am focusing on two areas:
 1. Deepening my backend and systems engineering skills in Python, Node.js, and Solidity.
 2. Exploring generative AI agents, prompt pipelines, and statistical modelling.
 
-## Projects
+<p align="center">
+  <img src="assets/terminal-card.svg" width="100%" alt="Interactive terminal workstation profile">
+</p>
 
-### AgriChain
-Blockchain supply chain platform with fraud detection.
-- **Why I built it:** I saw how middlemen manipulate crop pricing and forge quality certificates in agriculture. I wanted an automated escrow smart contract that farmers can verify without trusting an intermediary.
-- **How it works:** Logs provenance steps on Ethereum and holds payments in escrow until delivery checkpoints pass validation.
-- **Stack:** Solidity, Hardhat, Ethers.js, React, Node.js
-- **Links:** [AgriChain Repo](https://github.com/SujalKanu-stack/AgriChain) &bull; [Contract Repo](https://github.com/SujalKanu-stack/AgriChain_block)
+<p align="center">
+  <img src="assets/divider.svg" width="100%" alt="Divider">
+</p>
+
+<p align="center">
+  <img src="assets/skills.svg" width="100%" alt="Technical capabilities and skills matrix">
+</p>
+
+<p align="center">
+  <img src="assets/divider.svg" width="100%" alt="Divider">
+</p>
+
+## Featured Projects
 
 <p align="center">
   <a href="https://github.com/SujalKanu-stack/AgriChain">
-    <img src="assets/shots/agrichain.png" alt="AgriChain project screenshot" width="100%">
+    <img src="assets/project-agrichain.svg" width="100%" alt="AgriChain — Blockchain Supply Chain &amp; Fraud Detection">
   </a>
 </p>
+<p align="center">
+  <em>Why I built it: I saw how middlemen manipulate crop pricing and forge quality certificates in agriculture, so I built an automated escrow smart contract that farmers can verify without trusting an intermediary.</em>
+</p>
 
----
-
-### Research Collab Hub
-Platform for academic research and paper analysis.
-- **How it works:** Uses FastAPI on the backend and the Claude API to analyze uploaded research papers, summarize complex sections, and organize discussion threads across team members.
-- **Stack:** FastAPI, Python, React, Claude API, PostgreSQL
-- **Links:** [Research Collab Hub Repo](https://github.com/SujalKanu-stack/Research_collab_Hub)
+<br>
 
 <p align="center">
   <a href="https://github.com/SujalKanu-stack/Research_collab_Hub">
-    <img src="assets/shots/research-hub.png" alt="Research Collab Hub screenshot" width="100%">
+    <img src="assets/project-research-hub.svg" width="100%" alt="Research Collab Hub — Multi-Researcher Synthesis Platform">
   </a>
 </p>
+<p align="center">
+  <em>Why I built it: To automate dense paper summarization and semantic cross-referencing so researchers can synthesize complex sections faster using Claude API and FastAPI.</em>
+</p>
 
----
-
-### CardioSim 3D
-Interactive 3D heart simulator for medical students and educators.
-- **Hardest technical challenge:** Maintaining 60 FPS in WebGL while handling high-polygon heart meshes, camera orbital controls, and real-time hemodynamic flow without browser stutter.
-- **Stack:** WebGL, Three.js, JavaScript, TailwindCSS
-- **Links:** [CardioSim 3D Repo](https://github.com/SujalKanu-stack/Heart_Sim) &bull; [Alternative Repo](https://github.com/SujalKanu-stack/Heart-simulator)
+<br>
 
 <p align="center">
   <a href="https://github.com/SujalKanu-stack/Heart_Sim">
-    <img src="assets/shots/cardiosim.png" alt="CardioSim 3D screenshot" width="100%">
+    <img src="assets/project-cardiosim.svg" width="100%" alt="CardioSim 3D — Interactive WebGL Heart Simulation">
   </a>
 </p>
-
----
-
-### Portfolio Website
-Personal developer site.
-- **Details:** Built with Next.js and TailwindCSS to document my work and run web experiments.
-- **Stack:** Next.js, TypeScript, TailwindCSS
-- **Links:** [Portfolio Repo](https://github.com/SujalKanu-stack/portfolio) &bull; [Live Website](https://sujalkanu-stack.github.io/portfolio)
+<p align="center">
+  <em>Why I built it: To give medical students an interactive, 60 FPS real-time 3D anatomical heart simulator in the browser using WebGL shaders and Three.js orbital inspection.</em>
+</p>
 
 <p align="center">
-  <a href="https://sujalkanu-stack.github.io/portfolio">
-    <img src="assets/shots/portfolio.png" alt="Portfolio website screenshot" width="100%">
-  </a>
+  <img src="assets/divider.svg" width="100%" alt="Divider">
 </p>
-
-## Tech Stack
-
-- **Languages:** C, C++, Java, JavaScript, TypeScript, Python, SQL, Solidity
-- **Frontend & 3D:** React, Next.js, TailwindCSS, WebGL, Three.js
-- **Backend & Databases:** Node.js, Express, FastAPI, PostgreSQL, Redis
-- **Blockchain:** Solidity, Hardhat, Ethers.js
-- **DevOps & Environment:** Docker, Git, Linux
-- **Other:** IoT sensor telemetry, MATLAB statistical modelling
 
 ## Hackathons
 
 - **ArtPark CodeForge Rhapsody 4.0** (March 2026): Competed at the Indian Institute of Science (IISc), Bengaluru, in a national competition with over 2,796 teams.
 - **CODE RED 3.0** (2026): Hackathon organized by E-Cell at BMSIT&M, building timed software prototypes under sprint constraints.
 
+<p align="center">
+  <img src="assets/divider.svg" width="100%" alt="Divider">
+</p>
+
 ## Activity
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SujalKanu-stack/SujalKanu-stack/output/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SujalKanu-stack/SujalKanu-stack/output/github-snake.svg">
-  <img src="assets/snake.svg" alt="Contribution snake animation" width="100%">
-</picture>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SujalKanu-stack/SujalKanu-stack/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SujalKanu-stack/SujalKanu-stack/output/github-snake.svg">
+    <img src="assets/snake.svg" alt="Contribution snake animation" width="100%">
+  </picture>
+</p>
 
 <br>
 
-<table border="0">
-  <tr>
-    <td align="center" valign="middle">
-      <a href="https://github.com/SujalKanu-stack">
-        <img src="https://github-readme-stats.vercel.app/api?username=SujalKanu-stack&show_icons=true&theme=tokyonight&bg_color=0d1117&title_color=67e8f9&text_color=8b949e&icon_color=67e8f9&border_color=30363d&hide_border=false" alt="Sujal's GitHub stats" height="150">
-      </a>
-    </td>
-    <td align="center" valign="middle">
-      <a href="https://github.com/SujalKanu-stack">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SujalKanu-stack&layout=compact&theme=tokyonight&bg_color=0d1117&title_color=67e8f9&text_color=8b949e&border_color=30363d&hide_border=false" alt="Top languages" height="150">
-      </a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/SujalKanu-stack">
+    <img src="https://github-readme-stats.vercel.app/api?username=SujalKanu-stack&amp;show_icons=true&amp;theme=tokyonight&amp;bg_color=0d1117&amp;title_color=67e8f9&amp;text_color=8b949e&amp;icon_color=67e8f9&amp;border_color=30363d&amp;hide_border=false" alt="Sujal's GitHub stats" height="150">
+  </a>
+  <a href="https://github.com/SujalKanu-stack">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SujalKanu-stack&amp;layout=compact&amp;theme=tokyonight&amp;bg_color=0d1117&amp;title_color=67e8f9&amp;text_color=8b949e&amp;border_color=30363d&amp;hide_border=false" alt="Top languages" height="150">
+  </a>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="assets/footer.svg" width="100%" alt="Footer with collaborate and hire status">
+</p>
