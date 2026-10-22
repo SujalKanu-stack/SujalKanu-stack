@@ -66,15 +66,6 @@
   <img src="assets/divider.svg" width="100%" alt="Divider">
 </p>
 
-## Hackathons
-
-- **ArtPark CodeForge Rhapsody 4.0** (March 2026): Competed at the Indian Institute of Science (IISc), Bengaluru, in a national competition with over 2,796 teams.
-- **CODE RED 3.0** (2026): Hackathon organized by E-Cell at BMSIT&M, building timed software prototypes under sprint constraints.
-
-<p align="center">
-  <img src="assets/divider.svg" width="100%" alt="Divider">
-</p>
-
 ## Activity
 
 <p align="center">
