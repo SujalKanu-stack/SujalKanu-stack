@@ -13,14 +13,6 @@
   <img src="assets/divider.svg" width="100%" alt="Divider">
 </p>
 
-## About Me
-
-I spend most of my time writing code, studying distributed systems, and building side projects. In college I study computer science fundamentals like data structures, operating systems, and computer networks. Outside coursework, I build full-stack web applications and test smart contracts.
-
-Right now, I am focusing on two areas:
-1. Deepening my backend and systems engineering skills in Python, Node.js, and Solidity.
-2. Exploring generative AI agents, prompt pipelines, and statistical modelling.
-
 <p align="center">
   <img src="assets/terminal-card.svg" width="100%" alt="Interactive terminal workstation profile">
 </p>
