@@ -255,8 +255,8 @@ def build_ascii_matrix(processed_img, cropped_mask, ch, cw, cols=195, vertical_r
     return matrix, cols, rows
 
 
-def generate_hero_svg(matrix, cols, rows, vector_name_svg, output_svg="assets/hero.svg"):
-    """Generates 1200px wide hero SVG with vector name and grouped-tspan animated portrait."""
+def generate_hero_svg(matrix, cols, rows, vector_name_svg=None, output_svg="assets/hero.svg", no_name=True):
+    """Generates 1200px wide hero SVG with optional vector name and grouped-tspan animated portrait."""
     target_width = 1200.0
 
     # Layout metrics: portrait width 1080px centered in 1200px container
@@ -264,18 +264,25 @@ def generate_hero_svg(matrix, cols, rows, vector_name_svg, output_svg="assets/he
     char_w = portrait_width / cols
     char_h = char_w / 0.50 # ~11.07px per row
     portrait_x_start = (target_width - portrait_width) / 2.0
-    portrait_y_start = 110.0
+    portrait_y_start = 0.0 if no_name else 110.0
 
-    total_svg_height = int(portrait_y_start + rows * char_h + 30.0)
+    total_svg_height = int(portrait_y_start + rows * char_h + (30.0 if not no_name else 30.0))
 
     svg_lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 {total_svg_height}" width="100%" height="{total_svg_height}" preserveAspectRatio="xMidYMid meet">',
         '  <defs>',
-        '    <!-- Gradient for Name Header -->',
-        '    <linearGradient id="hero-name-grad" x1="0%" y1="0%" x2="100%" y2="0%">',
-        '      <stop offset="0%" stop-color="#22d3ee" />',
-        '      <stop offset="100%" stop-color="#8b5cf6" />',
-        '    </linearGradient>',
+    ]
+
+    if not no_name and vector_name_svg:
+        svg_lines.extend([
+            '    <!-- Gradient for Name Header -->',
+            '    <linearGradient id="hero-name-grad" x1="0%" y1="0%" x2="100%" y2="0%">',
+            '      <stop offset="0%" stop-color="#22d3ee" />',
+            '      <stop offset="100%" stop-color="#8b5cf6" />',
+            '    </linearGradient>',
+        ])
+
+    svg_lines.extend([
         '    <style>',
         '      .hero-bg { fill: #0d1117; }',
         '      .ascii-row {',
@@ -289,17 +296,22 @@ def generate_hero_svg(matrix, cols, rows, vector_name_svg, output_svg="assets/he
         '    </style>',
         '  </defs>',
         '',
-        f'  <!-- Dark GitHub Profile Background -->',
+        '  <!-- Dark GitHub Profile Background -->',
         f'  <rect width="1200" height="{total_svg_height}" class="hero-bg" />',
         '',
-        '  <!-- Vector Name Outline: SUJAL KUMAR KANU (OFL Font) -->',
-        '  <g id="hero-name">',
-        vector_name_svg,
-        '  </g>',
-        '',
-        '  <!-- ASCII Portrait Rows (Grouped <tspan> runs with fixed textLength) -->',
-        '  <g id="portrait-rows" class="ascii-row">'
-    ]
+    ])
+
+    if not no_name and vector_name_svg:
+        svg_lines.extend([
+            '  <!-- Vector Name Outline: SUJAL KUMAR KANU (OFL Font) -->',
+            '  <g id="hero-name">',
+            vector_name_svg,
+            '  </g>',
+            '',
+        ])
+
+    svg_lines.append('  <!-- ASCII Portrait Rows (Grouped <tspan> runs with fixed textLength) -->')
+    svg_lines.append('  <g id="portrait-rows" class="ascii-row">')
 
     # Animation timing: reveal rows line by line
     anim_start = 0.20
@@ -356,7 +368,7 @@ def generate_hero_svg(matrix, cols, rows, vector_name_svg, output_svg="assets/he
     return full_svg, total_svg_height
 
 
-def generate_hero_png(matrix, cols, rows, font_path, output_png="assets/hero.png", total_h_svg=1180):
+def generate_hero_png(matrix, cols, rows, font_path, output_png="assets/hero.png", total_h_svg=1104, no_name=True):
     """Renders a pristine 2400px wide static PNG fallback."""
     scale = 2.0
     png_w = int(1200 * scale)
@@ -365,34 +377,35 @@ def generate_hero_png(matrix, cols, rows, font_path, output_png="assets/hero.png
     png_img = Image.new("RGB", (png_w, png_h), (13, 17, 23)) # #0d1117
     draw = ImageDraw.Draw(png_img)
 
-    # Render Name Banner with gradient at top
-    try:
-        title_font = ImageFont.truetype(font_path, int(52 * scale))
-    except Exception:
-        title_font = ImageFont.load_default()
+    if not no_name:
+        # Render Name Banner with gradient at top
+        try:
+            title_font = ImageFont.truetype(font_path, int(52 * scale))
+        except Exception:
+            title_font = ImageFont.load_default()
 
-    name_text = "SUJAL KUMAR KANU"
-    bbox = draw.textbbox((0, 0), name_text, font=title_font)
-    name_w = bbox[2] - bbox[0]
-    name_x = (png_w - name_w) / 2.0
-    name_y = int(30 * scale)
+        name_text = "SUJAL KUMAR KANU"
+        bbox = draw.textbbox((0, 0), name_text, font=title_font)
+        name_w = bbox[2] - bbox[0]
+        name_x = (png_w - name_w) / 2.0
+        name_y = int(30 * scale)
 
-    # Render gradient text onto mask
-    mask_img = Image.new("L", (png_w, png_h), 0)
-    mask_draw = ImageDraw.Draw(mask_img)
-    mask_draw.text((name_x, name_y), name_text, fill=255, font=title_font)
+        # Render gradient text onto mask
+        mask_img = Image.new("L", (png_w, png_h), 0)
+        mask_draw = ImageDraw.Draw(mask_img)
+        mask_draw.text((name_x, name_y), name_text, fill=255, font=title_font)
 
-    # Linear gradient #22d3ee to #8b5cf6
-    grad_img = Image.new("RGB", (png_w, png_h))
-    grad_draw = ImageDraw.Draw(grad_img)
-    for x in range(int(name_x), int(name_x + name_w + 1)):
-        t = (x - name_x) / max(1.0, name_w)
-        r = int(34 + t * (139 - 34))
-        g = int(211 + t * (92 - 211))
-        b = int(238 + t * (246 - 238))
-        grad_draw.line([(x, name_y), (x, name_y + int(70 * scale))], fill=(r, g, b))
+        # Linear gradient #22d3ee to #8b5cf6
+        grad_img = Image.new("RGB", (png_w, png_h))
+        grad_draw = ImageDraw.Draw(grad_img)
+        for x in range(int(name_x), int(name_x + name_w + 1)):
+            t = (x - name_x) / max(1.0, name_w)
+            r = int(34 + t * (139 - 34))
+            g = int(211 + t * (92 - 211))
+            b = int(238 + t * (246 - 238))
+            grad_draw.line([(x, name_y), (x, name_y + int(70 * scale))], fill=(r, g, b))
 
-    png_img.paste(grad_img, (0, 0), mask_img)
+        png_img.paste(grad_img, (0, 0), mask_img)
 
     # Render ASCII rows
     try:
@@ -404,7 +417,7 @@ def generate_hero_png(matrix, cols, rows, font_path, output_png="assets/hero.png
     char_w = portrait_width / cols
     char_h = char_w / 0.50
     portrait_x_start = (png_w - portrait_width) / 2.0
-    portrait_y_start = 110.0 * scale
+    portrait_y_start = (0.0 if no_name else 110.0) * scale
 
     for r in range(rows):
         y_pos = portrait_y_start + r * char_h
@@ -439,6 +452,8 @@ def main():
     parser.add_argument("--output-svg", default="assets/hero.svg", help="Output hero SVG path")
     parser.add_argument("--output-png", default="assets/hero.png", help="Output hero PNG path")
     parser.add_argument("--font", default="tools/fonts/Poppins-ExtraBold.ttf", help="OFL Heavy font path")
+    parser.add_argument("--no-name", dest="no_name", action="store_true", default=True, help="Omit gradient name text banner (default: True)")
+    parser.add_argument("--with-name", dest="no_name", action="store_false", help="Include gradient name text banner")
 
     args = parser.parse_args()
 
@@ -463,22 +478,26 @@ def main():
     print(f"Step 3: Building ASCII matrix ({args.cols} columns)...")
     matrix, cols, rows = build_ascii_matrix(processed_img, cropped_mask, ch, cw, cols=args.cols)
 
-    print(f"Step 4: Extracting vector glyphs from {args.font}...")
-    vector_name_svg, _, _, _ = generate_vector_name(
-        text="SUJAL KUMAR KANU",
-        font_path=args.font,
-        font_size=52.0,
-        target_width=1200.0,
-        baseline_y=75.0
-    )
+    vector_name_svg = None
+    if not args.no_name:
+        print(f"Step 4: Extracting vector glyphs from {args.font}...")
+        vector_name_svg, _, _, _ = generate_vector_name(
+            text="SUJAL KUMAR KANU",
+            font_path=args.font,
+            font_size=52.0,
+            target_width=1200.0,
+            baseline_y=75.0
+        )
+    else:
+        print("Step 4: Skipping name header (--no-name)...")
 
     print(f"Step 5: Writing hero SVG to {args.output_svg}...")
-    _, total_h = generate_hero_svg(matrix, cols, rows, vector_name_svg, output_svg=args.output_svg)
+    _, total_h = generate_hero_svg(matrix, cols, rows, vector_name_svg, output_svg=args.output_svg, no_name=args.no_name)
 
     print(f"Step 6: Writing high-res fallback PNG to {args.output_png}...")
-    generate_hero_png(matrix, cols, rows, args.font, output_png=args.output_png, total_h_svg=total_h)
+    generate_hero_png(matrix, cols, rows, args.font, output_png=args.output_png, total_h_svg=total_h, no_name=args.no_name)
 
-    print("ASCII portrait and hero banner generation complete!")
+    print("ASCII portrait generation complete!")
     return 0
 
 

@@ -80,10 +80,10 @@
 
 <p align="center">
   <a href="https://github.com/SujalKanu-stack">
-    <img src="https://github-readme-stats.vercel.app/api?username=SujalKanu-stack&amp;show_icons=true&amp;theme=tokyonight&amp;bg_color=0d1117&amp;title_color=67e8f9&amp;text_color=8b949e&amp;icon_color=67e8f9&amp;border_color=30363d&amp;hide_border=false" alt="Sujal's GitHub stats" height="150">
+    <img src="https://github-readme-stats.vercel.app/api?username=SujalKanu-stack&amp;show_icons=true&amp;theme=tokyonight&amp;bg_color=0d1117&amp;title_color=67e8f9&amp;text_color=8b949e&amp;icon_color=67e8f9&amp;border_color=30363d&amp;hide_border=false&amp;cache_seconds=14400" alt="Sujal Kumar Kanu's GitHub Stats" height="150">
   </a>
   <a href="https://github.com/SujalKanu-stack">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SujalKanu-stack&amp;layout=compact&amp;theme=tokyonight&amp;bg_color=0d1117&amp;title_color=67e8f9&amp;text_color=8b949e&amp;border_color=30363d&amp;hide_border=false" alt="Top languages" height="150">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SujalKanu-stack&amp;layout=compact&amp;theme=tokyonight&amp;bg_color=0d1117&amp;title_color=67e8f9&amp;text_color=8b949e&amp;border_color=30363d&amp;hide_border=false&amp;cache_seconds=14400" alt="Sujal's Most Used Languages" height="150">
   </a>
 </p>
 
